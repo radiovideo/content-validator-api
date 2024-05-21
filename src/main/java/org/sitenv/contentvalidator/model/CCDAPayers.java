@@ -137,7 +137,7 @@ public class CCDAPayers {
 			
 			for(Map.Entry<String,CCDAPolicyActivity> ent : refPolicies.entrySet()) {
 				
-				ent.getValue().compare(ent.getKey(), subPolicies, results, svap2022, svap2023);
+				ent.getValue().compare(ent.getValue().getCoverageType(), subPolicies, results, svap2022, svap2023);
 				
 			}
 			

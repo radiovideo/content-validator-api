@@ -159,6 +159,32 @@ private static Logger log = LoggerFactory.getLogger(CCDAAllergyObs.class.getName
 		}
 		
 	}
+	
+	public void compare(CCDACode refCode, HashMap<String, CCDAPolicyActivity> subPolicies,
+			ArrayList<ContentValidationResult> results, boolean svap2022, boolean svap2023) {
+		
+		Boolean found = false;
+		for(Map.Entry<String,CCDAPolicyActivity> ent : subPolicies.entrySet()) {
+			
+			if(ent.getValue().getCoverageType() != null && 
+					!StringUtils.isEmpty(ent.getValue().getCoverageType().getCode()) && 
+					ent.getValue().getCoverageType().isCodePresent(refCode)) {
+				
+				this.comparePolicyActivities(ent.getKey(), ent.getValue(), results);
+				found = true;
+			}
+		}
+		
+		if(!found) {
+			
+			String msg = "The scenario requires data related to patient's coverage policy for type " + refCode.getCode() + " , but the submitted C-CDA does not contain the Policy Activity entry data.";
+			
+			// handle the case where the coverage data does not exist in the submitted CCDA
+			ContentValidationResult rs = new ContentValidationResult(msg, ContentValidationResultLevel.ERROR, "/ClinicalDocument", "0" );
+			results.add(rs);
+		}
+		
+	}
 
 	private void comparePolicyActivities(String policyCode, CCDAPolicyActivity subValue, ArrayList<ContentValidationResult> results) {
 		
