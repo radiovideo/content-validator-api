@@ -147,7 +147,8 @@ public class CCDALabResultOrg {
 			for(CCDASpecimen s: specimenType) {
 				
 				if(s.getSpecimenType() != null 
-						&& !StringUtils.isEmpty(s.getSpecimenType().getCode())) {
+						&& !StringUtils.isEmpty(s.getSpecimenType().getCode())
+						&& !specs.containsKey(s.getSpecimenType().getCode())) {
 					specs.put(s.getSpecimenType().getCode(), s);
 				}
 				

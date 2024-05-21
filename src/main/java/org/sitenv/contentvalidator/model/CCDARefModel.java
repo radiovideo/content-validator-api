@@ -824,7 +824,8 @@ public class CCDARefModel {
 			log.info("Model and Submitted CCDA do not have lab results for comparison ");
 		}
 		
-		compareSpecimens(validationObjective, submittedCCDA, results, curesUpdate, svap2022, svap2023);
+		if(svap2023)
+			compareSpecimens(validationObjective, submittedCCDA, results, curesUpdate, svap2022, svap2023);
 	}
 	
 	public void compareSpecimens(String validationObjective, CCDARefModel submittedCCDA, 

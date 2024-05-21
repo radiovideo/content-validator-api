@@ -356,7 +356,7 @@ public class CCDAConstants {
 		    REL_LAB_TEST_ORG_EXPRESSION = CCDAConstants.CCDAXPATH.compile("./entry/organizer[not(@nullFlavor) and statusCode[@code='active']]");
 		    REL_COMP_OBS_EXP = CCDAConstants.CCDAXPATH.compile("./component/observation[not(@nullFlavor)]");
 		    REL_SPECIMEN_EXP = CCDAConstants.CCDAXPATH.compile("./specimen[not(@nullFlavor)]");
-		    REL_SPECIMEN_CODE_EXP = CCDAConstants.CCDAXPATH.compile("./specimenRole/specimenPlayingEntity/code[@nullFlavor]");
+		    REL_SPECIMEN_CODE_EXP = CCDAConstants.CCDAXPATH.compile("./specimenRole/specimenPlayingEntity/code[not(@nullFlavor)]");
 		    IMMUNIZATION_EXPRESSION = CCDAConstants.CCDAXPATH.compile("/ClinicalDocument/component/structuredBody/component/section[not(@nullFlavor) and code[@code='11369-6']]");
 		    VITALSIGNS_EXPRESSION = CCDAConstants.CCDAXPATH.compile("/ClinicalDocument/component/structuredBody/component/section[not(@nullFlavor) and code[@code='8716-3']]");
 		    REL_VITAL_ORG_EXPRESSION = CCDAConstants.CCDAXPATH.compile("./entry/organizer[not(@nullFlavor)]");

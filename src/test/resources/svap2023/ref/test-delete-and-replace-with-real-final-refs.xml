@@ -1703,6 +1703,13 @@
 								<low value="20150622"/>
 								<high value="20150622"/>
 							</effectiveTime>
+							<specimen>
+								<specimenRole>
+									<specimenPlayingEntity>
+										<code code="122575003" codeSystemName="SNOMED-CT" displayName="Urine Specimen" codeSystem="2.16.840.1.113883.6.96"/>
+									</specimenPlayingEntity>
+								</specimenRole>
+							</specimen>
 							<component>
 								<observation classCode="OBS" moodCode="EVN">
 									<!-- ** Result Observation (V3) ** -->
@@ -1722,6 +1729,13 @@
 									<!-- C-CDA R1.1 does not include a vocabulary binding on the value element -->
 									<value xsi:type="ST">YELLOW</value>
 									<interpretationCode code="N" codeSystem="2.16.840.1.113883.5.83"/>
+									<specimen>
+										<specimenRole>
+											<specimenPlayingEntity>
+												<code code="122575003" codeSystemName="SNOMED-CT" displayName="Urine Specimen" codeSystem="2.16.840.1.113883.6.96"/>
+											</specimenPlayingEntity>
+										</specimenRole>
+									</specimen>
 									<referenceRange>
 										<observationRange>
 											<value xsi:type="ST">YELLOW</value>

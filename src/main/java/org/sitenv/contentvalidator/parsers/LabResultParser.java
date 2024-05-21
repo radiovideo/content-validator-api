@@ -102,11 +102,13 @@ public class LabResultParser {
 			
 			for(int i = 0; i < specimenNodeList.getLength(); i++) {
 				
+				log.info("Found Specimens");
 				Element node = (Element)specimenNodeList.item(i);
 				CCDACode cd = ParserUtilities.readCode((Element) CCDAConstants.REL_SPECIMEN_CODE_EXP.
 						evaluate(node, XPathConstants.NODE));
 				
 				if(cd != null) {
+					log.info("Adding Specimen for code {}",cd.getCode());
 					CCDASpecimen spec = new CCDASpecimen();
 					spec.setSpecimenType(cd);
 					specimenList.add(spec);
